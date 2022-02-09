@@ -6,7 +6,7 @@ function Calculator() {
     this.countMultiply = 0;
     this.countDivide = 0;
     this.lastOperation = '';
-    this.lastOPerationResult;
+    this.lastOPerationResult; 
     this.sum = function(num1, num2){
         let result = num1 + num2;
         this.countSum++;
@@ -66,7 +66,9 @@ function Calculator() {
     this.getLastOperation = function(){
         return 'method: ' + this.lastOperation + ', result: ' + this.lastOPerationResult;
     }
-}
+} 
+
+
 const calculator = new Calculator();
 console.log(calculator.sum(10, 5)); // 15 
 console.log(calculator.sum(20, 5)); // 25

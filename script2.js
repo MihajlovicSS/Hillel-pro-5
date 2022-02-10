@@ -8,38 +8,42 @@ function Calculator() {
         'multiply': 0,
         'divide': 0,
     }
+    /* this.updateData = function(method, result){
+        this.methodsData[method]+=1;
+        this.lastOPerationResult = {method, result};
+    } */
+    let updateData = (method, result) =>{
+        this.methodsData[method]+=1;
+        this.lastOPerationResult = {method, result};
+    }
     this.sum = function(num1, num2){
         let result = num1 + num2;
-        this.updateData('sum', result);
+        updateData('sum', result);
         return result;
     }
     this.subtract = function(num1, num2){
         let result = num1 - num2;
-        this.updateData('subtract', result);
+        updateData('subtract', result);
         return result;
     }
     this.pow = function(num1, num2){
         let result = num1 ** num2;
-        this.updateData('pow', result);
+        updateData('pow', result);
         return result;
     }
     this.multiply = function(num1, num2){
         let result = num1 * num2;
-        this.updateData('multiply', result);
+        updateData('multiply', result);
         return result;
     }
     this.divide = function(num1, num2){
         let result = num1 / num2;
-        this.updateData('divide', result);
+        updateData('divide', result);
         return result;
     }
     this.getMethodCallCount = function(nameOfMethod){
         return this.methodsData[nameOfMethod];
      }
-    this.updateData = function(method, result){
-        this.methodsData[method]+=1;
-        this.lastOPerationResult = {method, result};
-    }
     this.getLastOperation = function(){
         return 'method: ' + this.lastOPerationResult.method + ', result: ' + this.lastOPerationResult.result;
     }
